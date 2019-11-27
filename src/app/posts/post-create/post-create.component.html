@@ -1,0 +1,17 @@
+<mat-card>
+   <h2>Create New Post</h2>
+    <form (submit)="onAddPost(postForm)" #postForm="ngForm">
+      <div class="form-group">
+        <label for="postTitle">Post Title</label>
+        <input type="text" class="form-control" id="postTitle" placeholder="Post Title" name="title" ngModel required>
+      </div>
+      <div class="form-group">
+        <label for="postContent">Post Content</label>
+        <textarea class="form-control" name="" id="postContent" placeholder="Post Content"rows="3" name="content" ngModel required></textarea>
+      </div>
+      <button class="btn btn-outline-primary" type="submit">Save Post</button>
+    </form>
+  </mat-card>
+
+  <hr>
+
