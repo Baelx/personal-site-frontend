@@ -4,11 +4,25 @@ import { Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 
+/**
+ *  Angular Injectable decorator which allows Angular to find this service and inject it as a provider
+ *  The option providedIn: 'root' makes sure you only have one instance of this service throughout your app
+ *
+ */
 @Injectable({providedIn: 'root'})
 export class PostsService {
+
+  // An empty array. Type should be an array of Post interfaces(from the model file)
   private posts: Post[] = [];
   private postsUpdated = new Subject<Post[]>();
 
+  /**
+   * Just a regular constructor function. Assigns the HTTPClient Class to http variable.
+   * The private keyword(as well as other class visibility keywords), when passed as an argument
+   * to the constructor function, will automatically create an http property for use in your PostsService
+   * class.
+   * @param http Of type HTTPClient.
+   */
   constructor(private http: HttpClient) {}
 
   getPosts() {
@@ -29,6 +43,18 @@ export class PostsService {
       this.posts = transformedPosts;
       this.postsUpdated.next([...this.posts]);
     });
+  }
+
+  getSingle(postId: string) {
+    this.http.get<Post>(`http://localhost:3000/api/posts/${postId}`)
+    .pipe(map((postDataResponse) => {
+      console.dir(postDataResponse);
+        return {
+          title: Post.title,
+          content: Post.content,
+          id: post._id
+        };
+    }))
   }
 
   getPostUpdateListener() {

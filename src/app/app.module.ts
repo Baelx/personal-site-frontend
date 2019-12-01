@@ -12,6 +12,7 @@ import { PostCreateComponent } from './posts/post-create/post-create.component';
 import { HeaderComponent } from './header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PostListComponent } from './posts/post-list/post-list.component';
+import { PostSingleComponent } from './posts/post-single/post-single.component';
 import { ChartComponent } from './charts/chart/chart.component';
 import { MainComponent } from './main/main.component';
 
@@ -22,6 +23,7 @@ import { MainComponent } from './main/main.component';
     MainComponent,
     PostCreateComponent,
     PostListComponent,
+    PostSingleComponent,
     ChartComponent
   ],
   imports: [
