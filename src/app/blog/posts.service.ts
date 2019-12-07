@@ -49,11 +49,11 @@ export class PostsService {
     this.http.get<Post>(`http://localhost:3000/api/posts/${postId}`)
     .pipe(map((postDataResponse) => {
       console.dir(postDataResponse);
-        return {
-          title: Post.title,
-          content: Post.content,
-          id: post._id
-        };
+        // return {
+        //   title: post.title,
+        //   content: Post.content,
+        //   id: post._id
+        // };
     }))
   }
 

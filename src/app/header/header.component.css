@@ -18,3 +18,7 @@ a {
 .nav-active {
 
 }
+
+.nav-item {
+  margin-left: 2rem;
+}

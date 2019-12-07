@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
 
 // Import Post model TS interface and service
 import { Post } from '../post.model';
@@ -17,18 +18,18 @@ export class PostSingleComponent implements OnInit {
   constructor(public postsService: PostsService) {}
 
   ngOnInit() {
-    this.postsService.getPosts();
+    this.postsService.getSingle();
     this.postsSub = this.postsService.getPostUpdateListener()
     .subscribe((posts: Post[]) => {
       this.posts = posts;
     });
   }
 
-  onDelete(postId: string) {
-    this.postsService.deletePost(postId);
-  }
+  // onDelete(postId: string) {
+  //   this.postsService.deletePost(postId);
+  // }
 
-  ngOnDestroy() {
-    this.postsSub.unsubscribe();
-  }
+  // ngOnDestroy() {
+  //   this.postsSub.unsubscribe();
+  // }
 }
