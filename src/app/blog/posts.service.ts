@@ -12,6 +12,7 @@ import { map } from 'rxjs/operators';
 @Injectable({providedIn: 'root'})
 export class PostsService {
 
+  private post: Post;
   // An empty array. Type should be an array of Post interfaces(from the model file)
   private posts: Post[] = [];
   private postsUpdated = new Subject<Post[]>();
@@ -28,7 +29,7 @@ export class PostsService {
   getPosts() {
     // Unsubscribe from this observable will be handled automatically by the httpclientmodule
     this.http.get<any>('http://localhost:3000/api/posts')
-    .pipe(map((postDataResponse) => {
+    .pipe(map(postDataResponse => {
       console.dir(postDataResponse);
 
       return postDataResponse.map(post => {
@@ -46,15 +47,8 @@ export class PostsService {
   }
 
   getSingle(postId: string) {
-    this.http.get<Post>(`http://localhost:3000/api/posts/${postId}`)
-    .pipe(map((postDataResponse) => {
-      console.dir(postDataResponse);
-        // return {
-        //   title: post.title,
-        //   content: Post.content,
-        //   id: post._id
-        // };
-    }))
+    // This function should return something
+    return this.http.get<any>(`http://localhost:3000/api/posts/${postId}`);
   }
 
   getPostUpdateListener() {

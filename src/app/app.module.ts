@@ -15,14 +15,16 @@ import { PostListComponent } from './blog/post-list/post-list.component';
 import { PostSingleComponent } from './blog/post-single/post-single.component';
 import { BlogLatestComponent } from './blog/blog-latest/blog-latest.component';
 import { ChartComponent } from './charts/chart/chart.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './pages/home/home.component';
 import { JumbotronComponent } from './jumbotron/jumbotron.component';
+import { CodeComponent } from './pages/code/code.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HomeComponent,
+    CodeComponent
     PostCreateComponent,
     PostListComponent,
     PostSingleComponent,
