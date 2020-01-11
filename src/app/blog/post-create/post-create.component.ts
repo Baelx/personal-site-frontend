@@ -22,7 +22,7 @@ export class PostCreateComponent {
       return;
     }
 
-    this.postsService.addPost(form.value.title, form.value.content);
+    this.postsService.addPost(form.value.title, form.value.content, form.value.summary, form.value.categories);
     form.reset();
   }
 }
