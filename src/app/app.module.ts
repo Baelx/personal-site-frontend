@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material';
+// import { MatIconRegistry, MatIcon } from '@angular/material/icon';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
@@ -18,24 +19,27 @@ import { ChartComponent } from './charts/chart/chart.component';
 import { HomeComponent } from './pages/home/home.component';
 import { JumbotronComponent } from './jumbotron/jumbotron.component';
 import { CodeComponent } from './pages/code/code.component';
+import { BlogComponent } from './pages/blog/blog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    CodeComponent
+    CodeComponent,
     PostCreateComponent,
     PostListComponent,
     PostSingleComponent,
     BlogLatestComponent,
     ChartComponent,
-    JumbotronComponent
+    JumbotronComponent,
+    BlogComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     MatCardModule,
+    // MatIconRegistry,
     BrowserAnimationsModule,
     MatExpansionModule,
     HttpClientModule,

@@ -10,3 +10,45 @@ mat-expansion-panel-header {
 button {
   margin: 5px;
 }
+
+.post-card {
+
+  /* padding: 1rem; */
+  font-family: 'Cormorant Garamond', serif;
+  margin-bottom: 2rem;
+}
+
+.card-img {
+  width: 50%;
+  max-height: 325px;
+}
+
+.share-button {
+  float: right;
+}
+
+.flex-card {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.card-title {
+  font-size: 2.2rem;
+}
+
+.post-link {
+  color: black;
+  text-decoration: none;
+}
+
+.card-read-more:hover {
+  transform: translateY(-2px);
+  transition: 0.25s;
+}
+
+.card-text {
+  font-size: 1.5rem;
+    font-weight: 300;
+}
+
