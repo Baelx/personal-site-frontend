@@ -5,7 +5,7 @@
         <a class="post-link" [routerLink]="['/blog', post.id]" routerLinkActive="active" href="#">
           <div class="card-read-more">
             <h5 class="card-title">{{ post.title }}</h5>
-            <p class="card-text">These should be post summaries {{ post.content }}</p>
+            <p class="card-text">{{ post.summary }}</p>
           </div>
               <!-- <button class="share-button" mat-button><mat-icon aria-hidden="false" aria-label="Share Article">share</mat-icon></button> -->
             </a>

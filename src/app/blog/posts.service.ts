@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { summaryFileName } from '@angular/compiler/src/aot/util';
 
 /**
  *  Angular Injectable decorator which allows Angular to find this service and inject it as a provider
@@ -36,7 +37,9 @@ export class PostsService {
         return {
           title: post.title,
           content: post.content,
-          id: post._id
+          id: post._id,
+          summary: post.summary,
+          categories: post.categories
         };
       });
     }))
@@ -55,8 +58,8 @@ export class PostsService {
     return this.postsUpdated.asObservable();
   }
 
-  addPost(title: string, content: string) {
-    const post: Post = {id: null, title: title, content: content};
+  addPost(title: string, content: string, summary: string, categories: string[]) {
+    const post: Post = {id: null, title: title, content: content, summary: summary, categories: categories};
     this.http
       .post<{ message: string, postId: string }>('http://localhost:3000/api/posts', post)
       .subscribe((responseData) => {
