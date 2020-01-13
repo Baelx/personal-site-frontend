@@ -2,21 +2,6 @@
   margin: 2rem;
 }
 
-.post-categories {
-  display: flex;
-  flex-direction: row;
-    list-style-type: none;
-    margin: 2rem 0;
-    border-top: 2px solid black;
-    font-size: 1.7rem;
-    font-weight: 300;
-    padding: 0.7rem 0 0 0;
-}
-
-.category {
-  padding-right: 2rem;
-}
-
 app-post-list {
   border-right: 1px solid lightgray;
   width: 75%;

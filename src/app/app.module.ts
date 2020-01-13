@@ -20,6 +20,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { JumbotronComponent } from './jumbotron/jumbotron.component';
 import { CodeComponent } from './pages/code/code.component';
 import { BlogComponent } from './pages/blog/blog.component';
+import { PostCategoriesComponent } from './blog/post-categories/post-categories.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { BlogComponent } from './pages/blog/blog.component';
     BlogLatestComponent,
     ChartComponent,
     JumbotronComponent,
-    BlogComponent
+    BlogComponent,
+    PostCategoriesComponent
   ],
   imports: [
     BrowserModule,

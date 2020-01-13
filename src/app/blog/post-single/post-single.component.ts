@@ -34,6 +34,8 @@ export class PostSingleComponent implements OnInit {
          this.post.title = res.title;
          this.post.content = res.content;
          this.post.id = this.post.id;
+         this.post.summary = res.summary;
+         this.post.categories = res.categories;
       });
     });
 

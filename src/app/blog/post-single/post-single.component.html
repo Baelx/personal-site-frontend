@@ -3,7 +3,9 @@
     </div>
     <div class="col-8">
       <div *ngIf="post">
+        <app-post-categories></app-post-categories>
           <h1>{{post.title}}</h1>
+          <p>{{post.summary}}</p>
           <div>{{post.content}}</div>
       </div>
     </div>
