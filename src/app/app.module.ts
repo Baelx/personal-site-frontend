@@ -6,10 +6,8 @@ import { MatCardModule } from '@angular/material';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
-// import { NgbModule  } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
-import { PostCreateComponent } from './blog/post-create/post-create.component';
 import { HeaderComponent } from './header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PostListComponent } from './blog/post-list/post-list.component';
@@ -28,7 +26,6 @@ import { PostCategoriesComponent } from './blog/post-categories/post-categories.
     HeaderComponent,
     HomeComponent,
     CodeComponent,
-    PostCreateComponent,
     PostListComponent,
     PostSingleComponent,
     BlogLatestComponent,

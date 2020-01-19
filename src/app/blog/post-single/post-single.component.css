@@ -1,0 +1,22 @@
+
+.post-title {
+  font-size: 3.5rem;
+}
+
+.post-content {
+  font-size: 1.5rem;
+  margin: 2rem 0;
+}
+
+.post-summary {
+  font-size: 1.75rem;
+  font-weight: 300;
+}
+
+.post-body {
+  max-width: 66%;
+}
+
+figcaption {
+  margin-top: 1rem;
+}

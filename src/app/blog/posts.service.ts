@@ -31,8 +31,6 @@ export class PostsService {
     // Unsubscribe from this observable will be handled automatically by the httpclientmodule
     this.http.get<any>('http://localhost:3000/api/posts')
     .pipe(map(postDataResponse => {
-      console.dir(postDataResponse);
-
       return postDataResponse.map(post => {
         return {
           title: post.title,

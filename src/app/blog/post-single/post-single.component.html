@@ -4,9 +4,15 @@
     <div class="col-8">
       <div *ngIf="post">
         <app-post-categories></app-post-categories>
-          <h1>{{post.title}}</h1>
-          <p>{{post.summary}}</p>
-          <div>{{post.content}}</div>
+          <h1 class="post-title">{{post.title}}</h1>
+          <div class="post-body">
+            <p class="post-summary">{{post.summary}}</p>
+            <figure>
+              <img class="card-img" src="https://material.angular.io/assets/img/examples/shiba2.jpg"  alt="sus">
+              <figcaption>Shiba shibaaaa. Photo credit: John Macklemore</figcaption>
+            </figure>
+            <article class="post-content" [innerHTML]="post.content"></article>
+          </div>
       </div>
     </div>
     <div class="col-2">

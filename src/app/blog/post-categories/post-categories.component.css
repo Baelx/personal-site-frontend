@@ -11,4 +11,10 @@
 
 .category {
   padding-right: 2rem;
+  font-weight: 700;
+}
+
+.single {
+  padding-right: 2rem;
+  font-weight: 700;
 }
