@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { Subscription } from 'rxjs';
@@ -11,13 +11,15 @@ import { PostsService } from '../posts.service';
   templateUrl: './post-categories.component.html',
   styleUrls: ['./post-categories.component.css']
 })
-export class PostCategoriesComponent implements OnInit, OnDestroy {
+export class PostCategoriesComponent implements OnInit {
 
   // This is how you initilize a typescript interface
   public posts: Post[] = [];
-  public category: string;
+  // public categor: string;
   public categoryContext: string;
   private postsSub: Subscription;
+
+  @Input() category: string[];
 
   constructor(
     // Shorthand for creating a property right in a constructor
@@ -27,41 +29,15 @@ export class PostCategoriesComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
-    if (this.singleOrList() === 'single') {
-      this.getCategory();
-    } else {
-      this.getCategories();
-    }
+    this.categoryContext = this.singleOrList();
   }
 
-  getCategory() {
-    const id: string = this.route.snapshot.paramMap.get('id');
-    this.postsSub = this.postsService.getSingle(id)
-    .subscribe(res => {
-      res.map(res => {
-         this.category = res.categories;
-      });
-    });
-  }
-
-  getCategories() {
-    this.postsService.getPosts();
-    this.postsSub = this.postsService.getPostUpdateListener()
-    .subscribe((posts: Post[]) => {
-      this.posts = posts;
-    });
-  }
-
-  private singleOrList() {
-    if(this.route.snapshot.component.name === 'PostSingleComponent') {
+  singleOrList() {
+    if (this.route.routeConfig.component.name === 'PostSingleComponent') {
       this.categoryContext = 'single';
     } else {
       this.categoryContext = 'list';
     }
     return this.categoryContext;
-  }
-
-  ngOnDestroy() {
-    this.postsSub.unsubscribe();
   }
 }

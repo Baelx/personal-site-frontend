@@ -3,6 +3,6 @@ export interface Post {
   title: string;
   content: string;
   summary: string;
-  categories: string[];
+  category: string;
   publishDate: Date;
 }

@@ -26,6 +26,8 @@ export class PostSingleComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.getPost();
+    console.log('hello from post single', this.post);
+
   }
 
   getPost() {
@@ -37,6 +39,7 @@ export class PostSingleComponent implements OnInit, OnDestroy {
          this.post.content = res.content;
          this.post.id = this.post.id;
          this.post.summary = res.summary;
+         this.post.category = res.category;
          this.post.publishDate = res.publishDate;
       });
     });

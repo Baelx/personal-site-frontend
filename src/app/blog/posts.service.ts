@@ -37,7 +37,7 @@ export class PostsService {
           content: post.content,
           id: post._id,
           summary: post.summary,
-          categories: post.categories
+          category: post.category
         };
       });
     }))
@@ -56,8 +56,8 @@ export class PostsService {
     return this.postsUpdated.asObservable();
   }
 
-  addPost(title: string, content: string, summary: string, categories: string[]) {
-    const post: Post = {id: null, title: title, content: content, summary: summary, categories: categories};
+  addPost(title: string, content: string, summary: string, category: string, publishDate: Date) {
+    const post: Post = {id: null, title: title, content: content, summary: summary, category: category, publishDate: publishDate};
     this.http
       .post<{ message: string, postId: string }>('http://localhost:3000/api/posts', post)
       .subscribe((responseData) => {

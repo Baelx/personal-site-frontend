@@ -1,14 +1,15 @@
-  <div *ngFor="let post of posts" [class]="test">
-    <div class=" flex-card">
+<div *ngFor="let post of posts" class="post-card">
+  <a class="post-link" routerLinkActive="Active" [routerLink]="['/blog', post.id]">
+    <div class="flex-card">
       <img class="card-img" src="https://material.angular.io/assets/img/examples/shiba2.jpg"  alt="sus">
       <div class="card-body">
-        <a class="post-link" [routerLink]="['/blog', post.id]" routerLinkActive="active" href="#">
+        <!-- <a > -->
           <div class="card-read-more">
             <h5 class="card-title">{{ post.title }}</h5>
             <p class="card-text">{{ post.summary }}</p>
           </div>
-              <!-- <button class="share-button" mat-button><mat-icon aria-hidden="false" aria-label="Share Article">share</mat-icon></button> -->
-            </a>
+          <!-- <button class="share-button" mat-button><mat-icon aria-hidden="false" aria-label="Share Article">share</mat-icon></button> -->
       </div>
     </div>
-  </div>
+  </a>
+</div>
